@@ -220,3 +220,120 @@ textarea {
   clip: rect(0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.headerContainer h1 {
+  font-size: 7.0rem;
+  margin-bottom: 40px;
+}
+
+.headerContainer p {
+  font-size: 2.0rem;
+}
+
+.headerContainer button {
+  font-size: 2.0rem;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.headerContainer button a {
+  padding: 15px;
+}
+
+main {
+  height: 100vh;
+}
+
+main h2 {
+  font-size: 4.0rem;
+  text-align: center;
+}
+
+main .placeholder {
+  height: 80vh;
+  border: 2px solid red;
+}
+
+main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main form .column1,
+main form .column2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main form label {
+  font-size: 2.0rem;
+}
+
+footer {
+  background: grey;
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+}
+
+footer p a {
+  text-decoration: none;
+  color: blue;
+}
