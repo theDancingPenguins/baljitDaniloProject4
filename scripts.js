@@ -42,9 +42,10 @@ amiiboApp.updateAmiiboSeries = function(amiiboTitle) {
 
 amiiboApp.init = function() {
     // Create an event listener to listen on change for radio buttons and grab the value
-    $('#amiiboForm').on('change', function() {
-        const amiiboSeries = $('input[name=amiibo-series]:checked').val(); //$(this).val();
-        const amiiboTitle = $('input[name=amiibo-series]:checked').val();
+    $('#amiiboForm input').on('click', function(e) {
+        e.preventDefault();
+        const amiiboSeries = $(this).val(); //$(this).val();
+        const amiiboTitle = $(this).val();
 
         amiiboApp.getAmiibo(amiiboSeries);
         amiiboApp.updateAmiiboSeries(amiiboTitle);
