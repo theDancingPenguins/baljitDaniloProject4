@@ -11,26 +11,26 @@ amiiboApp.getAmiibo = function(query) {
 
     }).then((res) => {
         console.log(res);
-        $('#amiigoGallery').empty();
+        $('#amiibo-gallery').empty();
         amiiboApp.displayAmiibo(res.amiibo);
     })
 }
 
 // Create a function that displays information based on user input
 amiiboApp.displayAmiibo = function (amiibo) {
-    amiibo.forEach(amiibo => {
-        // Break object into separate pieces
-            // Image
-            // Character name
-            // Date released in North America
-        const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name })
+    const shuffle = amiibo.sort(() => 0.5 - Math.random());
+    let selected = shuffle.slice(0, 6);
+
+    selected.forEach(amiibo => {
+
+    
+        const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name });
         const name = $('<h3>').text(amiibo.name);
         const dateReleased = $('<p>').text(amiibo.release.na);
-        const amiiboInfo = $('<div>').append(image, name, dateReleased);
-        
-        // Dynamically display elements to the DOM
+        const amiiboInfo = $('<div>').addClass('amiibo-container').append(image, name, dateReleased);
+
         $('#amiibo-gallery').append(amiiboInfo);
-    });
+    })
 }
 
 
@@ -42,9 +42,9 @@ amiiboApp.updateAmiiboSeries = function(amiiboTitle) {
 
 amiiboApp.init = function() {
     // Create an event listener to listen on change for radio buttons and grab the value
-    $('#amiiboForm').on('click', function() {
+    $('#amiiboForm').on('change', function() {
         const amiiboSeries = $('input[name=amiibo-series]:checked').val(); //$(this).val();
-        const amiiboTitle = $(this).find(':selected').text();
+        const amiiboTitle = $('input[name=amiibo-series]:checked').val();
 
         amiiboApp.getAmiibo(amiiboSeries);
         amiiboApp.updateAmiiboSeries(amiiboTitle);

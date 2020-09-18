@@ -284,18 +284,49 @@ header {
   padding: 15px;
 }
 
-main {
-  height: 100vh;
-}
-
 main h2 {
   font-size: 4.0rem;
   text-align: center;
+  border: 2px solid green;
 }
 
-main .placeholder {
+main .amiibo-gallery {
   height: 80vh;
   border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .amiibo-gallery .amiibo-container {
+  padding: 20px;
+  border: 2px solid purple;
+  width: calc(100% / 3);
+  height: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .amiibo-gallery .amiibo-container img {
+  height: 200px;
+  margin: 0 auto;
+}
+
+main .amiibo-gallery .amiibo-container h3,
+main .amiibo-gallery .amiibo-container p {
+  width: 100%;
 }
 
 main form {
@@ -305,6 +336,8 @@ main form {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 main form .column1,
@@ -318,8 +351,28 @@ main form .column2 {
           flex-direction: column;
 }
 
+main form [type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
 main form label {
   font-size: 2.0rem;
+  border: 2px solid orange;
+}
+
+main form [type="radio"]:checked + .buttonLabel::after {
+  background-color: red;
+}
+
+main form [type="radio"]:active + .buttonLabel::before,
+main form [type="radio"]:active + .buttonLabel::after {
+  background: yellow;
+}
+
+main form [type="radio"]:focus + .buttonLabel::before,
+main form [type="radio"]:focus + .buttonLabel::after {
+  border: 3px solid pink;
 }
 
 footer {
