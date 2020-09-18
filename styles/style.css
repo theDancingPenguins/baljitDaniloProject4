@@ -235,7 +235,6 @@ html {
 body {
   font-family: 'Overpass', sans-serif;
   font-size: 1.5rem;
-  background-color: #accad5;
 }
 
 h1,
@@ -246,10 +245,45 @@ h3 {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #C42626;
+}
+
+.buttonStyle {
+  color: white;
+  border: solid 2px #4a4848;
+  border-radius: 46px;
+  background: linear-gradient(145deg, #C42626, #9b1e1e);
+  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+  text-transform: uppercase;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.8rem;
+  padding: 10px;
+  margin: 15px;
+}
+
+.buttonStyle:hover {
+  background: linear-gradient(145deg, #ffffff, darkgrey);
+  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+  color: #C42626;
+  font-weight: 700;
+}
+
+.buttonStyle:active {
+  border-radius: 46px;
+  background: #9b1e1e;
+  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+  color: white;
 }
 
 header {
-  background-image: url(../../assets/417101.jpg);
+  background-image: url(../../assets/nintendo-wallpaper-4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -261,23 +295,16 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
 }
 
-main {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(48%, white), color-stop(58%, #accad5));
-  background: linear-gradient(white 48%, #accad5 58%);
-}
-
 .headerContainer h1 {
   font-size: 7.0rem;
-  margin-bottom: 40px;
+  margin-bottom: 450px;
+  margin-top: 100px;
 }
 
 .headerContainer p {
@@ -311,11 +338,11 @@ main .amiibo-gallery {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: white;
 }
 
 main .amiibo-gallery .amiibo-container {
   padding: 20px;
-  border: 2px solid purple;
   width: calc(100% / 3);
   height: 50%;
   text-align: center;
@@ -361,15 +388,6 @@ main form .column2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 35%;
-}
-
-main form input {
-  background: transparent;
-  text-transform: uppercase;
-  font-family: 'Overpass', sans-serif;
-  font-size: 1.7rem;
-  padding: 10px;
-  margin: 15px;
 }
 
 footer {
