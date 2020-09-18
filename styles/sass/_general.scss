@@ -13,6 +13,7 @@ html {
 body {
     font-family: 'Overpass', sans-serif;
     font-size: 1.5rem;
+    background-color: #accad5;
 }
 
 h1,
@@ -27,12 +28,20 @@ a {
 
 // header
 header {
+    background-image: url(../../assets/417101.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+main {
+    background: linear-gradient(rgba(255,255,255,1) 48%, rgba(172,202,213,1) 58%);
 }
 
 .headerContainer {
@@ -55,6 +64,13 @@ header {
         margin-top: 20px;
     }
 }
+
+// .bloopo {
+//     background-image: url(/assets/start-buttons.png);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     height: 47px;
+// }
 
 // main
 main {
@@ -88,6 +104,7 @@ main {
 
             img {
                height: 200px;
+               overflow-x: hidden;
                margin: 0 auto;
             }
 
@@ -108,18 +125,29 @@ main {
         .column2 {
             display: flex;
             flex-direction: column;
+            width: 35%;
         }
 
-        [type="radio"] {
-            opacity: 0;
-            position: absolute;
+        input {
+            background: transparent;
+            // border: none;
+            text-transform: uppercase;
+            font-family: 'Overpass', sans-serif;
+            font-size: 1.7rem;
+            padding: 10px;
+            margin: 15px;
         }
 
+        // [type="radio"] {
+        //     opacity: 0;
+        //     position: absolute;
+        // }
 
-        label {
-            font-size: 2.0rem;
-            border: 2px solid orange;
-        }
+
+        // label {
+        //     font-size: 2.0rem;
+        //     border: 2px solid orange;
+        // }
 
 
         // .buttonLabel {
@@ -140,19 +168,19 @@ main {
         //     border: 2px black solid;
         // }
 
-        [type="radio"]:checked + .buttonLabel::after {
-            background-color: red;
-        }
+    //     [type="radio"]:checked + .buttonLabel::after {
+    //         background-color: red;
+    //     }
 
-        [type="radio"]:active + .buttonLabel::before,
-        [type="radio"]:active + .buttonLabel::after {
-            background: yellow;
-        }
+    //     [type="radio"]:active + .buttonLabel::before,
+    //     [type="radio"]:active + .buttonLabel::after {
+    //         background: yellow;
+    //     }
 
-        [type="radio"]:focus + .buttonLabel::before,
-        [type="radio"]:focus + .buttonLabel::after{
-            border: 3px solid pink;
-}
+    //     [type="radio"]:focus + .buttonLabel::before,
+    //     [type="radio"]:focus + .buttonLabel::after{
+    //         border: 3px solid pink;
+    //     }
     }
 }
 
