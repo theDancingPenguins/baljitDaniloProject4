@@ -108,80 +108,92 @@ header {
 
 // main
 main {
-    background-color: #A7E2FE;
+    background-image: url(../../assets/nintendo-main-4.png);
+    background-size: cover;
     h2 {
         font-size: 4.5rem;
         text-align: center;
         padding: 75px 0 25px 0;
         
     }
-
-    .amiibo-gallery {
-        height: 80vh;
-        // overflow: hidden;
-        border: 10px outset rgb(164,41,22);
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        background-color: white;
+}
+    
+.amiiboGallery {
+    height: 70vh;
+    // overflow: hidden;
+    border: 10px outset rgb(164,41,22);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: white;
  
-        .amiibo-container {
-            padding: 20px;
-            // border: 2px solid purple;
-            width: calc(100% / 3);
-            height: 50%;
-            text-align: center;
+    .amiiboContainer {
+        padding: 20px;
+        // border: 2px solid purple;
+        width: calc(100% / 3);
+        height: 50%;
+        text-align: center;
 
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-
-            img {
-               height: 200px;
-               overflow-x: hidden;
-               margin: 0 auto;
-            }
-
-            h3 {
-                font-size: 2rem;
-            }
-
-            h3,
-            p {
-                width: 100%;
-            }
-        }
-    }
-    form {
         display: flex;
-        justify-content: space-evenly;
-        margin-top: 30px;
+        flex-wrap: wrap;
+        align-items: center;
 
-        .column1,
-        .column2 {
-            display: flex;
-            flex-direction: column;
-            width: 35%;
+        img {
+            height: 200px;
+            overflow-x: hidden;
+            margin: 0 auto;
         }
 
-      
+        h3 {
+            font-size: 2rem;
+        }
 
-
+        h3,
+        p {
+            width: 100%;
+        }
     }
 }
 
+// form styling
+form {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+
+    .row1,
+    .row2 {
+    display: flex;
+        justify-content: space-between;
+        align-content: center;
+        // flex-wrap: wrap;
+
+        .buttonStyle {
+            width: 100%;
+        }
+    }
+
+}
+
+
 // footer
 footer {
-    background: grey;
+    background: white;
+    border-top: solid 2px rgb(74, 72, 72);
+    border-bottom: solid 2px rgb(74, 72, 72);
     padding: 10px;
     text-transform: uppercase;
     text-align: center;
     p {
-        color: white;
-        
+        color: black;
+        line-height: 25px;
+
         a {
-            text-decoration: none;
-            color: blue;
+            text-decoration: underline;
+            color: rgb(164,41,22);
+            &:hover {
+                font-weight: 700;
+            }
         }
     }
 }
