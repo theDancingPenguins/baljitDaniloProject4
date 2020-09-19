@@ -26,7 +26,7 @@ amiiboApp.displayAmiibo = function (amiibo) {
     
         const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name });
         const name = $('<h3>').text(amiibo.name);
-        const dateReleased = $('<p>').text(amiibo.release.na);
+        const dateReleased = $('<p>').text(`Release Date: ${amiibo.release.na}`);
         const amiiboInfo = $('<div>').addClass('amiibo-container').append(image, name, dateReleased);
 
         $('#amiibo-gallery').append(amiiboInfo);
