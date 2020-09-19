@@ -257,8 +257,8 @@ a:hover {
   border: solid 2px #4a4848;
   border-radius: 46px;
   background: linear-gradient(145deg, #C42626, #9b1e1e);
-  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
-          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
   text-transform: uppercase;
   font-family: 'Overpass', sans-serif;
   font-size: 1.8rem;
@@ -268,8 +268,8 @@ a:hover {
 
 .buttonStyle:hover {
   background: linear-gradient(145deg, #ffffff, darkgrey);
-  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
-          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
   color: #C42626;
   font-weight: 700;
 }
@@ -277,8 +277,8 @@ a:hover {
 .buttonStyle:active {
   border-radius: 46px;
   background: #9b1e1e;
-  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
-          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
   color: white;
 }
 
@@ -337,7 +337,8 @@ header {
 }
 
 main {
-  background-color: #A7E2FE;
+  background-image: url(../../assets/nintendo-main-4.png);
+  background-size: cover;
 }
 
 main h2 {
@@ -346,8 +347,8 @@ main h2 {
   padding: 75px 0 25px 0;
 }
 
-main .amiibo-gallery {
-  height: 80vh;
+.amiiboGallery {
+  height: 70vh;
   border: 10px outset #a42916;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,7 +361,7 @@ main .amiibo-gallery {
   background-color: white;
 }
 
-main .amiibo-gallery .amiibo-container {
+.amiiboGallery .amiiboContainer {
   padding: 20px;
   width: calc(100% / 3);
   height: 50%;
@@ -375,55 +376,76 @@ main .amiibo-gallery .amiibo-container {
           align-items: center;
 }
 
-main .amiibo-gallery .amiibo-container img {
+.amiiboGallery .amiiboContainer img {
   height: 200px;
   overflow-x: hidden;
   margin: 0 auto;
 }
 
-main .amiibo-gallery .amiibo-container h3 {
+.amiiboGallery .amiiboContainer h3 {
   font-size: 2rem;
 }
 
-main .amiibo-gallery .amiibo-container h3,
-main .amiibo-gallery .amiibo-container p {
+.amiiboGallery .amiiboContainer h3,
+.amiiboGallery .amiiboContainer p {
   width: 100%;
 }
 
-main form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+form {
   margin-top: 30px;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
-main form .column1,
-main form .column2 {
+form .row1,
+form .row2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 35%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+form .row1 .buttonStyle,
+form .row2 .buttonStyle {
+  width: 100%;
 }
 
 footer {
-  background: grey;
+  background: white;
+  border-top: solid 2px #4a4848;
+  border-bottom: solid 2px #4a4848;
   padding: 10px;
   text-transform: uppercase;
   text-align: center;
 }
 
 footer p {
-  color: white;
+  color: black;
+  line-height: 25px;
 }
 
 footer p a {
-  text-decoration: none;
-  color: blue;
+  text-decoration: underline;
+  color: #a42916;
+}
+
+footer p a:hover {
+  font-weight: 700;
+}
+
+@media (max-width: 990px) {
+  .amiiboGallery .amiiboContainer h3 {
+    font-size: 1.4rem;
+  }
+  .amiiboGallery .amiiboContainer p {
+    font-size: 1.3rem;
+  }
+  form .buttonStyle {
+    font-size: 1.4rem;
+    padding: 5px;
+  }
 }

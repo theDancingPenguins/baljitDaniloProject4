@@ -11,7 +11,7 @@ amiiboApp.getAmiibo = function(query) {
 
     }).then((res) => {
         console.log(res);
-        $('#amiibo-gallery').empty();
+        $('#amiiboGallery').empty();
         amiiboApp.displayAmiibo(res.amiibo);
     })
 }
@@ -22,18 +22,19 @@ amiiboApp.displayAmiibo = function (amiibo) {
     let selected = shuffle.slice(0, 6);
 
     selected.forEach(amiibo => {
-
+        // return N/A when date released is not provided
+        let dateReleased = $('<p>').text(`Release Date: ${amiibo.release.na}`);
+        if (!amiibo.release.na) {
+            dateReleased =$('<p>').text(`Release Date: N/A`);
+        }; 
     
         const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name });
         const name = $('<h3>').text(amiibo.name);
-        const dateReleased = $('<p>').text(`Release Date: ${amiibo.release.na}`);
-        const amiiboInfo = $('<div>').addClass('amiibo-container').append(image, name, dateReleased);
+        const amiiboInfo = $('<div>').addClass('amiiboContainer').append(image, name, dateReleased);
 
-        $('#amiibo-gallery').append(amiiboInfo);
+        $('#amiiboGallery').append(amiiboInfo);
     })
 }
-
-
 
 // Create a function that will update title to the given game series
 amiiboApp.updateAmiiboSeries = function(amiiboTitle) {
