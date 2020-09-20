@@ -13,20 +13,23 @@ html {
 body {
     font-family: 'Overpass', sans-serif;
     font-size: 1.5rem;
-    scrollbar-color: red pink;
 
-    /* Works on Chrome/Edge/Safari */
-*::-webkit-scrollbar {
-  width: 12px;
-}
-*::-webkit-scrollbar-track {
-  background: white;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #5993af;
-  border-radius: 20px;
-  border: 3px solid white;
-}
+    // Firefox Scroll bar
+    scrollbar-color: #5993af white;
+    scrollbar-width: 12px;
+
+    // Chrome/Edge/Safari scroll bar
+    *::-webkit-scrollbar {
+    width: 12px;
+    }
+    *::-webkit-scrollbar-track {
+    background: white;
+    }
+    *::-webkit-scrollbar-thumb {
+    background-color: #5993af;
+    border-radius: 20px;
+    border: 3px solid white;
+    }
 }
 
 
@@ -133,10 +136,20 @@ main {
         
     }
 }
-    
+
+.mainFlexContainer {
+    padding-bottom: 40px;
+}
+
 .amiiboGallery {
+    .placeholder {
+        background-image: url(../../assets/placeholder2.png);
+        background-size: cover;
+        width: 100%;
+        background-position: center;
+    }
+
     height: 70vh;
-    // overflow: hidden;
     border: 10px outset rgb(164,41,22);
     display: flex;
     justify-content: space-evenly;
@@ -174,7 +187,6 @@ main {
 // form styling
 form {
     margin-top: 30px;
-    padding-bottom: 10px;
     width: 100%;
 
     .row1,
@@ -200,6 +212,7 @@ footer {
     padding: 10px;
     text-transform: uppercase;
     text-align: center;
+   
     p {
         color: black;
         line-height: 25px;
