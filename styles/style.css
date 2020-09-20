@@ -273,19 +273,20 @@ a:hover {
   border: solid 2px #4a4848;
   border-radius: 46px;
   background: linear-gradient(145deg, #C42626, #9b1e1e);
-  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
-          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
   text-transform: uppercase;
   font-family: 'Overpass', sans-serif;
   font-size: 1.8rem;
+  font-weight: 700;
   padding: 10px;
   margin: 15px;
 }
 
 .buttonStyle:hover {
   background: linear-gradient(145deg, #ffffff, darkgrey);
-  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
-          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
   color: #C42626;
   font-weight: 700;
 }
@@ -293,8 +294,8 @@ a:hover {
 .buttonStyle:active {
   border-radius: 46px;
   background: #9b1e1e;
-  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
-          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
   color: white;
 }
 
@@ -326,7 +327,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  height: 75%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -358,9 +359,10 @@ main {
 }
 
 main h2 {
-  font-size: 4.5rem;
+  font-size: 7.5rem;
   text-align: center;
   padding: 75px 0 25px 0;
+  color: black;
 }
 
 .mainFlexContainer {
@@ -385,6 +387,7 @@ main h2 {
 .amiiboGallery .placeholder {
   background-image: url(../../assets/placeholder2.png);
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   background-position: center;
 }
@@ -484,6 +487,10 @@ footer p a:hover {
 }
 
 @media (max-width: 800px) {
+  .headerContainer {
+    height: 92%;
+    padding-top: 100px;
+  }
   .wrapper {
     width: 90%;
     max-width: 1280px;
@@ -530,6 +537,19 @@ footer p a:hover {
   }
 }
 
+@media (max-width: 680px) {
+  .headerContainer h1 {
+    padding-top: 45px;
+    font-size: 6rem;
+  }
+  .headerContainer p {
+    font-size: 2.4rem;
+  }
+  main h2 {
+    font-size: 6rem;
+  }
+}
+
 @media (max-width: 645px) {
   .mainFlexContainer {
     -webkit-box-orient: vertical;
@@ -568,16 +588,27 @@ footer p a:hover {
   }
 }
 
+@media (max-width: 550px) {
+  .headerContainer h1 {
+    padding-top: 50px;
+    font-size: 5rem;
+  }
+  .headerContainer p {
+    font-size: 2rem;
+  }
+  main h2 {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 460px) {
   form .buttonStyle {
     font-size: 1.2rem;
-    font-weight: 700;
-    padding: 5px;
   }
 }
 
 @media (max-width: 400px) {
-  form {
+  .mainFlexContainer form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -586,9 +617,25 @@ footer p a:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  form .row1,
-  form .row2,
-  form .buttonStyle {
+  .mainFlexContainer form .buttonStyle {
+    margin: 7px 0;
+    padding: 10px;
+    font-size: 1.4rem;
+  }
+  .mainFlexContainer form .row2:last-child {
+    margin-bottom: 20px;
+  }
+  .mainFlexContainer form .row1,
+  .mainFlexContainer form .row2 {
     width: 100%;
+  }
+  footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .amiiboGallery .amiiboContainer img {
+    height: 180px;
   }
 }
