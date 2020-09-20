@@ -30,6 +30,10 @@
 }
 
 @media(max-width: 800px){
+    .headerContainer {
+        height: 92%;
+        padding-top: 100px;
+    }
     .wrapper {
         width: 90%;
         max-width: 1280px;
@@ -78,6 +82,22 @@
     }
 }
 
+@media(max-width: 680px) {
+    .headerContainer {
+        h1 {
+            padding-top: 45px;
+            font-size: 6rem;
+        }
+        p {
+            font-size: 2.4rem;
+        }
+    }
+
+    main h2 {
+        font-size: 6rem;
+    }
+}
+
 @media(max-width: 645px) {
     .mainFlexContainer {
         flex-direction: column;
@@ -108,25 +128,58 @@
     }
 }
 
+@media(max-width: 550px) {
+    .headerContainer {
+        h1 {
+            padding-top: 50px;
+            font-size: 5rem;
+        }
+        p {
+            font-size: 2rem;
+        }
+    }
+
+    main h2 {
+        font-size: 5rem;
+    }
+}
+
 @media(max-width: 460px) {
     form {
         .buttonStyle {
             font-size: 1.2rem;
-            font-weight: 700;
-            padding: 5px;
         }
     }
 }
 
 @media(max-width: 400px) {
-    form {
-        flex-direction: column;
-        align-items: center;
+    .mainFlexContainer{
+        form {
+            flex-direction: column;
+            align-items: center;
 
-        .row1,
-        .row2,
-        .buttonStyle {
-            width: 100%;
+            .buttonStyle {
+                margin: 7px 0;
+                padding: 10px;
+                font-size: 1.4rem;
+            }
+            .row2:last-child {
+                margin-bottom: 20px;
+            }
         }
+    }
+    
+    .mainFlexContainer form .row1, 
+    .mainFlexContainer form .row2 {
+        width: 100%;
+    }
+    footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 320px) {
+    .amiiboGallery .amiiboContainer img {
+        height: 180px;
     }
 }
