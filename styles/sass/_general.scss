@@ -13,7 +13,23 @@ html {
 body {
     font-family: 'Overpass', sans-serif;
     font-size: 1.5rem;
+    scrollbar-color: red pink;
+
+    /* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
 }
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #5993af;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+}
+
+
 
 h1,
 h2,
@@ -126,6 +142,7 @@ main {
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: white;
+    overflow: auto;
  
     .amiiboContainer {
         padding: 20px;
@@ -137,7 +154,6 @@ main {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-
         img {
             height: 200px;
             overflow-x: hidden;
