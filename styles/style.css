@@ -235,8 +235,8 @@ html {
 body {
   font-family: 'Overpass', sans-serif;
   font-size: 1.5rem;
-  scrollbar-color: red pink;
-  /* Works on Chrome/Edge/Safari */
+  scrollbar-color: #5993af white;
+  scrollbar-width: 12px;
 }
 
 body *::-webkit-scrollbar {
@@ -273,8 +273,8 @@ a:hover {
   border: solid 2px #4a4848;
   border-radius: 46px;
   background: linear-gradient(145deg, #C42626, #9b1e1e);
-  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
-          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
   text-transform: uppercase;
   font-family: 'Overpass', sans-serif;
   font-size: 1.8rem;
@@ -284,8 +284,8 @@ a:hover {
 
 .buttonStyle:hover {
   background: linear-gradient(145deg, #ffffff, darkgrey);
-  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
-          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
   color: #C42626;
   font-weight: 700;
 }
@@ -293,8 +293,8 @@ a:hover {
 .buttonStyle:active {
   border-radius: 46px;
   background: #9b1e1e;
-  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
-          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
   color: white;
 }
 
@@ -363,6 +363,10 @@ main h2 {
   padding: 75px 0 25px 0;
 }
 
+.mainFlexContainer {
+  padding-bottom: 40px;
+}
+
 .amiiboGallery {
   height: 70vh;
   border: 10px outset #a42916;
@@ -376,6 +380,13 @@ main h2 {
       flex-wrap: wrap;
   background-color: white;
   overflow: auto;
+}
+
+.amiiboGallery .placeholder {
+  background-image: url(../../assets/placeholder2.png);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
 }
 
 .amiiboGallery .amiiboContainer {
@@ -410,7 +421,6 @@ main h2 {
 
 form {
   margin-top: 30px;
-  padding-bottom: 10px;
   width: 100%;
 }
 
@@ -470,5 +480,115 @@ footer p a:hover {
   form .buttonStyle {
     font-size: 1.4rem;
     padding: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .mainFlexContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .amiiboGallery {
+    width: 65%;
+    margin-bottom: 20px;
+  }
+  .amiiboGallery .amiiboContainer {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+  }
+  .amiiboGallery .amiiboContainer h3 {
+    padding: 7px 0;
+  }
+  .amiiboGallery .amiiboContainer img {
+    height: 100%;
+  }
+  .amiiboGallery .amiiboContainer p:last-child {
+    padding-bottom: 20px;
+  }
+  form {
+    width: 35%;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  form .row1,
+  form .row2 {
+    display: block;
+  }
+  form .buttonStyle {
+    margin: 20px 0;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 645px) {
+  .mainFlexContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 15px;
+  }
+  .mainFlexContainer .amiiboGallery,
+  .mainFlexContainer form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .mainFlexContainer .amiiboGallery {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .mainFlexContainer form {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mainFlexContainer form .row1,
+  .mainFlexContainer form .row2 {
+    width: 45%;
+  }
+  .mainFlexContainer form .buttonStyle {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 460px) {
+  form .buttonStyle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  form .row1,
+  form .row2,
+  form .buttonStyle {
+    width: 100%;
   }
 }
