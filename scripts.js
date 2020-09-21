@@ -18,15 +18,32 @@ amiiboApp.getAmiibo = function(query) {
 
 // Create a function that displays information based on user input
 amiiboApp.displayAmiibo = function (amiibo) {
-    const shuffle = amiibo.sort(() => 0.5 - Math.random());
-    let selected = shuffle.slice(0, 6);
+    function shuffle(array) {
+        let currentIndex = array.length,
+            temporaryValue,
+            randomIndex;
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
 
+    let shuffled = shuffle(amiibo);
+    let selected = shuffled.slice(0, 6);
+    
     selected.forEach(amiibo => {
         // return N/A when date released is not provided
         let dateReleased = $('<p>').text(`Release Date: ${amiibo.release.na}`);
         if (!amiibo.release.na) {
-            dateReleased =$('<p>').text(`Release Date: N/A`);
-        }; 
+            dateReleased = $('<p>').text(`Release Date: N/A`);
+        };
     
         const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name });
         const name = $('<h3>').text(amiibo.name);
@@ -35,7 +52,6 @@ amiiboApp.displayAmiibo = function (amiibo) {
         $('#amiiboGallery').append(amiiboInfo);
     })
 }
-
 // Create a function that will update title to the given game series
 amiiboApp.updateAmiiboSeries = function(amiiboTitle) {
     $('h2 span').text(amiiboTitle);

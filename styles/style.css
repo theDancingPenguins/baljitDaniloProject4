@@ -273,8 +273,8 @@ a:hover {
   border: solid 2px #4a4848;
   border-radius: 46px;
   background: linear-gradient(145deg, #C42626, #9b1e1e);
-  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
-          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+  -webkit-box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
+          box-shadow: 5px 5px 10px #5b6b71,  -5px -5px 10px #fdffff;
   text-transform: uppercase;
   font-family: 'Overpass', sans-serif;
   font-size: 1.8rem;
@@ -285,8 +285,8 @@ a:hover {
 
 .buttonStyle:hover {
   background: linear-gradient(145deg, #ffffff, darkgrey);
-  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
-          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+  -webkit-box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #878787,  -5px -5px 10px #ffffff;
   color: #C42626;
   font-weight: 700;
 }
@@ -294,8 +294,8 @@ a:hover {
 .buttonStyle:active {
   border-radius: 46px;
   background: #9b1e1e;
-  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
-          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+  -webkit-box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
+          box-shadow: inset 5px 5px 10px #521010,  inset -5px -5px 10px #e42c2c;
   color: white;
 }
 
@@ -333,8 +333,13 @@ header {
           justify-content: space-between;
 }
 
-.headerContainer h1 {
+.headerContainer .titlePage h1 {
   font-size: 8.0rem;
+}
+
+.headerContainer .titlePage p {
+  font-size: 1.2rem;
+  padding-top: 10px;
 }
 
 .headerContainer p {
@@ -385,7 +390,7 @@ main h2 {
 }
 
 .amiiboGallery .placeholder {
-  background-image: url(../../assets/placeholder2.png);
+  background-image: url(../../assets/placeholder2c.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -411,6 +416,9 @@ main h2 {
   height: 200px;
   overflow-x: hidden;
   margin: 0 auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
 }
 
 .amiiboGallery .amiiboContainer h3 {
@@ -539,7 +547,6 @@ footer p a:hover {
 
 @media (max-width: 680px) {
   .headerContainer h1 {
-    padding-top: 45px;
     font-size: 6rem;
   }
   .headerContainer p {
@@ -589,12 +596,11 @@ footer p a:hover {
 }
 
 @media (max-width: 550px) {
-  .headerContainer h1 {
-    padding-top: 50px;
-    font-size: 5rem;
-  }
   .headerContainer p {
     font-size: 2rem;
+  }
+  .headerContainer .titlePage h1 {
+    font-size: 5rem;
   }
   main h2 {
     font-size: 5rem;
