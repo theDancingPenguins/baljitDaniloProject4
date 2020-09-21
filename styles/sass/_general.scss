@@ -101,11 +101,18 @@ header {
     flex-direction: column;
     height: 75%;
     justify-content: space-between;
-    h1 {
-        font-size: 8.0rem;
-        // margin-bottom: 545px;
-        // margin-top: 125px;
+    
+    .titlePage {
+       h1 {
+            font-size: 8.0rem;
+        } 
+        
+        p {
+            font-size: 1.2rem;
+            padding-top: 10px;
+        }
     }
+    
 
     p {
         font-size: 3.0rem;
@@ -144,7 +151,7 @@ main {
 
 .amiiboGallery {
     .placeholder {
-        background-image: url(../../assets/placeholder2.png);
+        background-image: url(../../assets/placeholder2c.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
@@ -173,6 +180,8 @@ main {
             height: 200px;
             overflow-x: hidden;
             margin: 0 auto;
+            object-fit: contain;
+            max-width: 100%;
         }
 
         h3 {

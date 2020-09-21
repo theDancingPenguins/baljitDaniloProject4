@@ -85,7 +85,6 @@
 @media(max-width: 680px) {
     .headerContainer {
         h1 {
-            padding-top: 45px;
             font-size: 6rem;
         }
         p {
@@ -130,12 +129,14 @@
 
 @media(max-width: 550px) {
     .headerContainer {
-        h1 {
-            padding-top: 50px;
-            font-size: 5rem;
-        }
         p {
             font-size: 2rem;
+        }
+
+        .titlePage {
+             h1 {
+                font-size: 5rem;
+            }
         }
     }
 
@@ -153,6 +154,8 @@
 }
 
 @media(max-width: 400px) {
+    
+
     .mainFlexContainer{
         form {
             flex-direction: column;
