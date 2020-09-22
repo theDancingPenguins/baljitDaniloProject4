@@ -1,4 +1,8 @@
-// general styles
+
+//==============================================||
+//  This is the General Styling for the Webpage ||
+//==============================================||
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -13,11 +17,9 @@ html {
 body {
     font-family: 'Overpass', sans-serif;
     font-size: 1.5rem;
-
     // Firefox Scroll bar
     scrollbar-color: #5993af white;
     scrollbar-width: 12px;
-
     // Chrome/Edge/Safari scroll bar
     *::-webkit-scrollbar {
     width: 12px;
@@ -31,8 +33,6 @@ body {
     border: 3px solid white;
     }
 }
-
-
 
 h1,
 h2,
@@ -49,7 +49,10 @@ a {
     }
 }
 
-// button styles
+//==================================================||
+//  This is the Styling for the buttons on the page ||
+//==================================================||
+
 .buttonStyle {
     color: white;
     border: solid 2px rgb(74, 72, 72);
@@ -59,11 +62,11 @@ a {
     -5px -5px 10px #fdffff;
     text-transform: uppercase;
     font-family: 'Overpass', sans-serif;
-    font-size: 1.8rem;
     font-weight: 700;
+    font-size: 1.8rem;
     padding: 10px;
     margin: 15px;
-
+    // White hover effect on the user input buttons.
     &:hover {
         background: linear-gradient(145deg, #ffffff, darkgrey);
         box-shadow:  5px 5px 10px #878787, 
@@ -71,7 +74,7 @@ a {
         color: #C42626;
         font-weight: 700;
     }
-
+    // When you select / submit a button it changes the colour.
     &:active {
         border-radius: 46px;
         background: #9b1e1e;
@@ -81,7 +84,10 @@ a {
     }
 }
 
-// header
+//==============================================||
+//  This is the Header Styling for the Webpage  ||
+//==============================================||
+
 header {
     background-image: url(../../assets/nintendo-wallpaper-4.jpg);
     background-size: cover;
@@ -94,54 +100,47 @@ header {
     text-align: center;
 }
 
-
 .headerContainer {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
-    height: 75%;
+    height: 77.5%;
     justify-content: space-between;
-    
     .titlePage {
-       h1 {
-            font-size: 8.0rem;
-        } 
-        
         p {
-            font-size: 1.2rem;
-            padding-top: 10px;
+            padding-top: 15px;
+            font-size: 1.3rem;
         }
     }
-    
-
+    h1 {
+        font-size: 8.0rem;
+    }
     p {
         font-size: 3.0rem;
         font-weight: 700;
         text-transform: uppercase;
     }
-
     button {
         font-size: 2.0rem;
         padding: 15px;
+        margin-top: 20px;
         a {
             padding: 15px;
         }
-        
-        margin-top: 20px;
     }
 }
 
+//==============================================||
+//   This is the Main Styling for the Webpage   ||
+//==============================================||
 
-
-// main
 main {
     background-image: url(../../assets/nintendo-main-4.png);
     background-size: cover;
     h2 {
-        font-size: 7.5rem;
+        font-size: 5.5rem;
         text-align: center;
         padding: 75px 0 25px 0;
-        color: black;
     }
 }
 
@@ -149,15 +148,8 @@ main {
     padding-bottom: 40px;
 }
 
+// This is the container holding the Amiibo containers returned by the API
 .amiiboGallery {
-    .placeholder {
-        background-image: url(../../assets/placeholder2c.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        background-position: center;
-    }
-
     height: 70vh;
     border: 10px outset rgb(164,41,22);
     display: flex;
@@ -165,14 +157,19 @@ main {
     flex-wrap: wrap;
     background-color: white;
     overflow: auto;
- 
+    // This CSS affects the Mario Placeholder image.
+    .placeholder {
+        background-image: url(../../assets/placeholder2c.png);
+        background-size: cover;
+        width: 100%;
+        background-position: center;
+    }
+    // This CSS affects each individual Amiibo's container.
     .amiiboContainer {
         padding: 20px;
-        // border: 2px solid purple;
         width: calc(100% / 3);
         height: 50%;
         text-align: center;
-
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -180,14 +177,12 @@ main {
             height: 200px;
             overflow-x: hidden;
             margin: 0 auto;
-            object-fit: contain;
             max-width: 100%;
+            object-fit: contain;
         }
-
         h3 {
             font-size: 2rem;
         }
-
         h3,
         p {
             width: 100%;
@@ -195,18 +190,17 @@ main {
     }
 }
 
-// form styling
+//==============================================||
+//   This is the Form Styling for the Webpage   ||
+//==============================================||
 form {
     margin-top: 30px;
     width: 100%;
-
     .row1,
     .row2 {
     display: flex;
         justify-content: space-between;
         align-content: center;
-        // flex-wrap: wrap;
-
         .buttonStyle {
             width: 100%;
         }
@@ -214,8 +208,9 @@ form {
 
 }
 
-
-// footer
+//==============================================||
+//  This is the Footer Styling for the Webpage  ||
+//==============================================||
 footer {
     background: white;
     border-top: solid 2px rgb(74, 72, 72);
@@ -223,17 +218,15 @@ footer {
     padding: 10px;
     text-transform: uppercase;
     text-align: center;
-   
     p {
         color: black;
         line-height: 25px;
-
-        a {
-            text-decoration: underline;
-            color: rgb(164,41,22);
-            &:hover {
-                font-weight: 700;
-            }
+    }
+    a {
+        text-decoration: underline;
+        color: rgb(164,41,22);
+        &:hover {
+            font-weight: 700;
         }
     }
 }

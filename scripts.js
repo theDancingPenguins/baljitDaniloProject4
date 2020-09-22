@@ -1,7 +1,7 @@
-// Create the application namespace
+// Create the application namespace.
 const amiiboApp = {};
 
-// Create a function that gets Amiibo characters and info from Amiibo API from game series endpoint
+// This function retrieves Amiibo characters (as objects in an array) and the relevant information of each from the Amiibo API, from the game series endpoint.
 amiiboApp.getAmiibo = function(query) {
     // Make an ajax call to retrieve results from the API
     $.ajax({
@@ -10,14 +10,14 @@ amiiboApp.getAmiibo = function(query) {
         dataType: 'JSON',
 
     }).then((res) => {
-        console.log(res);
         $('#amiiboGallery').empty();
         amiiboApp.displayAmiibo(res.amiibo);
     })
 }
 
-// Create a function that displays information based on user input
+// This function displays the amiibos that are retrieved by the Ajax call, and displays them on the webpage based on user input.
 amiiboApp.displayAmiibo = function (amiibo) {
+    // This function shuffles the array of retrieved Amiibo's and randomizes their index values, so that each click produces different results.
     function shuffle(array) {
         let currentIndex = array.length,
             temporaryValue,
@@ -38,27 +38,32 @@ amiiboApp.displayAmiibo = function (amiibo) {
     let shuffled = shuffle(amiibo);
     let selected = shuffled.slice(0, 6);
     
+    // This loop runs through the randomized Amiibo array and then retrieves the relevant information of each, storing it in variables.
     selected.forEach(amiibo => {
-        // return N/A when date released is not provided
+        // This will return N/A if the release date information for North America is unavailable.
         let dateReleased = $('<p>').text(`Release Date: ${amiibo.release.na}`);
         if (!amiibo.release.na) {
             dateReleased = $('<p>').text(`Release Date: N/A`);
         };
-    
+        // This is where the Amiibo image is stored.
         const image = $('<img>').attr({ 'src': amiibo.image, 'alt': amiibo.name });
+        // This is where the name of each Amiibo is stored.
         const name = $('<h3>').text(amiibo.name);
+        // This is where the complete information is stored (date released, image, name), where the individual pieces are put together in a Div.
         const amiiboInfo = $('<div>').addClass('amiiboContainer').append(image, name, dateReleased);
 
+        // This is what appends the divs of each Amiibo's information to the HTML.
         $('#amiiboGallery').append(amiiboInfo);
     })
 }
-// Create a function that will update title to the given game series
+
+// This function will update the title on the page based on the Amiibo series, using user input to print the correct title.
 amiiboApp.updateAmiiboSeries = function(amiiboTitle) {
     $('h2 span').text(amiiboTitle);
 }
 
 amiiboApp.init = function() {
-    // Create an event listener to listen on change for radio buttons and grab the value
+    // This event listener takes the users click, and performs the relevant functions ( getting amiibo's with the API call, and updating the gallery title on the screen. )
     $('#amiiboForm input').on('click', function(e) {
         e.preventDefault();
         const amiiboSeries = $(this).val(); //$(this).val();
@@ -67,10 +72,9 @@ amiiboApp.init = function() {
         amiiboApp.getAmiibo(amiiboSeries);
         amiiboApp.updateAmiiboSeries(amiiboTitle);
     })
-
 }
 
-// Initialize the application
+// Initialize the application.
 $(function() {
     amiiboApp.init()
 });
