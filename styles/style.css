@@ -300,7 +300,7 @@ a:hover {
 }
 
 header {
-  background-image: url(../../assets/nintendo-wallpaper-4.jpg);
+  background-image: url(../assets/nintendo-wallpaper-4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -359,7 +359,7 @@ header {
 }
 
 main {
-  background-image: url(../../assets/nintendo-main-4.png);
+  background-image: url(../assets/nintendo-main-4.png);
   background-size: cover;
 }
 
@@ -389,7 +389,7 @@ main h2 {
 }
 
 .amiiboGallery .placeholder {
-  background-image: url(../../assets/placeholder2c.png);
+  background-image: url(../assets/placeholder2c.png);
   background-size: cover;
   width: 100%;
   background-position: center;
